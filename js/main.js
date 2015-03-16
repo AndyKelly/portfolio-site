@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 	var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 
 	//open team-project bio
-	$('#cd-team').find('ul a').on('click', function(event){
+	$('.cd-team').find('ul a').on('click', function(event){
 		event.preventDefault();
 		var selected_project = $(this).data('type');
 		$('.cd-project-bio.'+selected_project+'').addClass('slide-in');
@@ -36,3 +36,14 @@ jQuery(document).ready(function($){
 		}
 	});
 });
+
+var filenames = ['nodejs.png', 'nodejs.png', 'nodejs.png', 'nodejs.png', 'nodejs.png', 'nodejs.png', ]
+
+
+function addElementsToSkillsGrid(){
+	for (var i = filenames.length - 1; i >= 0; i--) {
+		$('skillsGrid').
+
+		filenames[i]
+	};
+}

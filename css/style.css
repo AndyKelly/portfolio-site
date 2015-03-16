@@ -16,7 +16,7 @@ html * {
 
 body {
   font-size: 100%;
-  font-family: "Droid Serif", serif;
+  font-family: "Open Serif", serif;
   color: #333333;
   background-color: white;
   /* prevent ie from showing the horizontal scrollbar */
@@ -113,7 +113,7 @@ main.slide-out .cd-overlay {
   max-width: 768px;
 }
 .cd-section h2 {
-  font-family: "Droid Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1em;
@@ -146,21 +146,88 @@ main.slide-out .cd-overlay {
 }
 
 header {
-  background: #f2ecbd;
+  background: #ffffff;
+  min-height: 40em;
 }
 header h1 {
-  font-size: 30px;
-  font-size: 1.875rem;
-  font-family: "Droid Sans", sans-serif;
+  font-size: 80px;
+  font-size: 2.875rem;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: .4em;
-  color: #3e380c;
+  color: #18191A;
 }
 header p {
   font-size: 13px;
   font-size: 0.8125rem;
   color: #93861d;
+}
+
+.container{
+    display:flex;
+}
+.fixed{
+    width: 200px;
+}
+.flex-item{
+    flex-grow: 1;
+}
+.skillsContainer{
+
+    display: flex;
+}
+.doughnut-legend {
+list-style: none;
+right: 8px;
+top: 0;
+}
+.doughnut-legend li {
+
+  font-family: "Open Sans", sans-serif;
+display: block;
+padding-left: 30px;
+position: relative;
+margin-bottom: 4px;
+border-radius: 5px;
+padding: 2px 8px 2px 28px;
+font-size: 14px;
+cursor: default;
+-webkit-transition: background-color 200ms ease-in-out;
+-moz-transition: background-color 200ms ease-in-out;
+-o-transition: background-color 200ms ease-in-out;
+transition: background-color 200ms ease-in-out;
+}
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+.doughnut-legend li span {
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+width: 20px;
+height: 100%;
+}
+
+.profiler {
+  width: 200px;
+  height: 200px;
+  background-image: url('../img/me.png');
+  background-size: cover;
+  display: block;
+  margin: 0 auto;
+  margin-top: 7em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
 }
 
 .cd-placeholder-1 {
@@ -172,16 +239,16 @@ header p {
   background: #FFF;
 }
 
-#cd-team {
+.cd-team {
   background: #8abeb2;
 }
-#cd-team .cd-container {
+.cd-team .cd-container {
   max-width: 1200px;
 }
-#cd-team h2 {
+.cd-team h2 {
   color: #1a2f2a;
 }
-#cd-team li {
+.cd-team li {
   margin-bottom: 2em;
   border-radius: 0.25em;
   box-shadow: 0 0 10px rgba(92, 75, 81, 0);
@@ -189,21 +256,21 @@ header p {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.no-touch #cd-team li:hover {
+.no-touch .cd-team li:hover {
   box-shadow: 0 0 10px rgba(92, 75, 81, 0.3);
 }
-.no-touch #cd-team li:hover .cd-img-overlay {
+.no-touch .cd-team li:hover .cd-img-overlay {
   opacity: 1;
 }
-#cd-team figure {
+.cd-team figure {
   position: relative;
 }
-#cd-team img {
+.cd-team img {
   display: block;
   width: 100%;
   border-radius: .25em .25em 0 0;
 }
-#cd-team .cd-img-overlay {
+.cd-team .cd-img-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -216,7 +283,7 @@ header p {
   -moz-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-#cd-team .cd-img-overlay span {
+.cd-team .cd-img-overlay span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -229,18 +296,18 @@ header p {
   transform: translateX(-50%) translateY(-50%);
   color: #FFF;
 }
-#cd-team .cd-project-info {
+.cd-team .cd-project-info {
   height: 80px;
   background: #FFF;
   text-align: center;
-  font-family: "Droid Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   padding-top: 20px;
   border-radius: 0 0 .25em .25em;
 }
-#cd-team .cd-project-info span {
+.cd-team .cd-project-info span {
   display: block;
-  font-family: "Droid Serif", serif;
+  font-family: "Open Serif", serif;
   font-weight: normal;
   color: #999999;
   font-size: 14px;
@@ -248,12 +315,12 @@ header p {
   margin-top: .5em;
 }
 @media only screen and (min-width: 768px) {
-  #cd-team li {
+  .cd-team li {
     width: 31%;
     float: left;
     margin-right: 3.5%;
   }
-  #cd-team li:nth-child(3n) {
+  .cd-team li:nth-child(3n) {
     margin-right: 0;
   }
 }
@@ -316,7 +383,7 @@ header p {
   color: #FFF;
 }
 .cd-project-bio .cd-bio-content h1 {
-  font-family: "Droid Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;

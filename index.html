@@ -3,51 +3,72 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif' rel='stylesheet' type='text/css'>
-
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
+  	<script src="js/chart.js"></script>
+  	<script src="js/jquer.appear.js"></script>
 	<title>Andrew Kelly</title>
 </head>
 <body>
+
 	<main>
 		<header class="cd-section">
 			<div class="cd-container">
-				<h1>Andrew Kelly</h1>
-				<p>Scroll down and click on a project picture</p>
+				<h1>Andy Kelly</h1>
+				<div class="profiler animated bounceIn"></div>
 			</div> <!-- cd-container -->
 		</header>
 
+
+
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
-				<h2>Just a section</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, dicta, iure, excepturi nulla odio deserunt nihil rem ut earum hic adipisci minus sequi minima accusamus error tenetur quis aliquam sed.</p>
+				<h2>Bio</h2>
+				<p>She's just a small town girl, living in a lonely world
+She took the midnight train going anywhere
+He's just a city boy, born and raised in South Detroit
+He took the midnight train going anywhere
+
+I seen her in a smoky room
+The smell of wine and cheap perfume
+For a smile they can share the night
+It goes on and on and on and on</p>
 			</div> <!-- cd-container -->
 		</section>
+
 
 		<section class="cd-section cd-placeholder-2">
-			<div class="cd-container">
-				<h2>Just a section</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, dicta, iure, excepturi nulla odio deserunt nihil rem ut earum hic adipisci minus sequi minima accusamus error tenetur quis aliquam sed.</p>
+			<div id="skillsContainer" class="cd-container">
+				<h2>Languages</h2>
+				<div class="container">
+				    <div class="fixed" id="fixed">	
+				    </div>
+				    <div class="flex-item">
+				    	
+						<canvas id="modular-doughnut" width="400" height="400"></canvas>
+				    </div>
+				</div>
 			</div> <!-- cd-container -->
 		</section>
 
-		<section id="cd-team" class="cd-section">
+		<section class="cd-team cd-section">
 			<div class="cd-container">
 				<h2>Projects</h2>
 				<ul>
 					<li>
 						<a href="#0" data-type="project-1">
 							<figure>
-								<img src="img/team-project-1.jpg" alt="Project 1">
+								<img src="img/suggstr-proj.png" alt="Project 1">
 								<div class="cd-img-overlay"><span>View Project</span></div>
 							</figure>
 
 							<div class="cd-project-info">
-								Cellular Automata <span>LISP</span>
+								Testy <span>Node.js</span>
 							</div> <!-- cd-project-info -->
 						</a>
 					</li>
@@ -55,12 +76,12 @@
 					<li>
 						<a href="#0" data-type="project-2">
 							<figure>
-								<img src="img/team-project-1.jpg" alt="Team project 1">
+								<img src="img/nt-proj.png" alt="Team project 1">
 								<div class="cd-img-overlay"><span>View Project</span></div>
 							</figure>
 
 							<div class="cd-project-info">
-								Static Meta-Programming <span>Node.js</span>
+								NewsTalk <span>Node.js</span>
 							</div> <!-- cd-project-info -->
 						</a>
 					</li>
@@ -73,7 +94,7 @@
 							</figure>
 
 							<div class="cd-project-info">
-								 Machine Learning<span>R</span>
+								RCSI SurgiQuiz<span>R</span>
 							</div> <!-- cd-project-info -->
 						</a>
 					</li>
@@ -81,30 +102,99 @@
 			</div> <!-- cd-container -->
 		</section> <!-- cd-team -->
 
+
+
+
+		<section class="cd-section cd-placeholder-2">
+			<div id="skillsContainer" class="cd-container">
+				<h2>Technologies</h2>
+				<img src="http://iconion.com/posts/images/flat-icon-design.jpg">
+			</div> <!-- cd-container -->
+		</section>
+
+
+		<section class="cd-team cd-section">
+			<div class="cd-container">
+				<h2>Projects</h2>
+				<ul>
+					<li>
+						<a href="#0" data-type="project-4">
+							<figure>
+								<img src="img/team-project-1.jpg" alt="Project 1">
+								<div class="cd-img-overlay"><span>View Project</span></div>
+							</figure>
+
+							<div class="cd-project-info">
+								Cellular Automata <span>JavaScript</span>
+							</div> <!-- cd-project-info -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="#0" data-type="project-5">
+							<figure>
+								<img src="img/team-project-1.jpg" alt="Team project 1">
+								<div class="cd-img-overlay"><span>View Project</span></div>
+							</figure>
+
+							<div class="cd-project-info">
+								Redis Analytics <span>Node.js</span>
+							</div> <!-- cd-project-info -->
+						</a>
+					</li>
+
+					<li>
+						<a href="#0" data-type="project-6">
+							<figure>
+								<img src="img/team-project-1.jpg" alt="Team project 1">
+								<div class="cd-img-overlay"><span>View Project</span></div>
+							</figure>
+
+							<div class="cd-project-info">
+								Coming Soon<span></span>
+							</div> <!-- cd-project-info -->
+						</a>
+					</li>
+				</ul>
+			</div> <!-- cd-container -->
+		</section> <!-- cd-team -->
+
+
+
+		<section class="cd-section cd-placeholder-2">
+			<div class="cd-container">
+				<h2>Contact</h2>
+				<p>I'm currently looking for work blah andykelly@outlook.com</p>
+			</div> <!-- cd-container -->
+		</section>
+
+
 		<div class="cd-overlay"></div>
 	</main>
 
 	<div class="cd-project-bio project-1">
 		<div class="cd-project-bio-pict">
-			<img src="img/project-bio-img-1.jpg" alt="Member Bio image">
+			<img src="img/suggstr-bio.png" alt="Member Bio image">
 		</div> <!-- cd-project-bio-pict -->
 
 		<div class="cd-bio-content">
 			<h1>Placeholder Project</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, amet, voluptatibus et omnis dolore illo saepe voluptatem qui quibusdam sunt corporis ut iure repellendus delectus voluptate explicabo temporibus quos eaque?</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, adipisci, explicabo pariatur illum deleniti quam iusto placeat nisi aliquam praesentium mollitia eligendi a! Sequi, voluptatibus sed quos possimus harum rem tempore fugiat? Corporis, officia, assumenda, asperiores blanditiis quidem aliquam fugiat vel excepturi velit provident aut omnis quos aliquid tempora eaque. Nemo, eveniet, sint maxime eum maiores totam est inventore numquam voluptatem hic nam blanditiis placeat illum nesciunt voluptatum eos cum quos magni voluptates ipsam. Perspiciatis alias ducimus libero. Quo provident omnis fugiat ut repellendus optio cum quaerat odio et ipsa. Molestias, atque repellat non maxime amet corporis magni libero quam numquam error beatae at asperiores et a porro nostrum ab necessitatibus esse aliquid iure repellendus obcaecati unde quo eius eum dolores quasi consectetur culpa velit optio! Sequi, dolor, minima, veniam doloribus in ullam cupiditate iste animi ipsum esse eaque similique illo temporibus magni et earum amet sint deleniti est reiciendis. Maxime, quis, animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
+			<img src="img/suggstr-detail.gif">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab,vident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-project-bio -->
 
 	<div class="cd-project-bio project-2">
 		<div class="cd-project-bio-pict">
-			<img src="img/project-bio-img-2.jpg" alt="Member Bio image">
+			<img src="img/today-bio.png" alt="Member Bio image">
 		</div> <!-- cd-project-bio-pict -->
 
 		<div class="cd-bio-content">
-			<h1>Placeholder Project</h1>
+			<h1>Newstalk</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, amet, voluptatibus et omnis dolore illo saepe voluptatem qui quibusdam sunt corporis ut iure repellendus delectus voluptate explicabo temporibus quos eaque?</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, adipisci, explicabo pariatur illum deleniti quam iusto placeat nisi aliquam praesentium mollitia eligendi a! Sequi, voluptatibus sed quos possimus harum rem tempore fugiat? Corporis, officia, assumenda, asperiores blanditiis quidem aliquam fugiat vel excepturi velit provident aut omnis quos aliquid tempora eaque. Nemo, eveniet, sint maxime eum maiores totam est inventore numquam voluptatem hic nam blanditiis placeat illum nesciunt voluptatum eos cum quos magni voluptates ipsam. Perspiciatis alias ducimus libero. Quo provident omnis fugiat ut repellendus optio cum quaerat odio et ipsa. Molestias, atque repellat non maxime amet corporis magni libero quam numquam error beatae at asperiores et a porro nostrum ab necessitatibus esse aliquid iure repellendus obcaecati unde quo eius eum dolores quasi consectetur culpa velit optio! Sequi, dolor, minima, veniam doloribus in ullam cupiditate iste animi ipsum esse eaque similique illo temporibus magni et earum amet sint deleniti est reiciendis. Maxime, quis, animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
+			<img src="img/today-detail.png">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facxime, quis, animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-project-bio -->
 
@@ -116,11 +206,100 @@
 		<div class="cd-bio-content">
 			<h1>Placeholder Project</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, amet, voluptatibus et omnis dolore illo saepe voluptatem qui quibusdam sunt corporis ut iure repellendus delectus voluptate explicabo temporibus quos eaque?</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, adipisci, explicabo pariatur illum deleniti quam iusto placeat nisi aliquam praesentium mollitia eligendi a! Sequi, voluptatibus sed quos possimus harum rem tempore fugiat? Corporis, officia, assumenda, asperiores blanditiis quidem aliquam fugiat vel excepturi velit provident aut omnis quos aliquid tempora eaque. Nemo, eveniet, sint maxime eum maiores totam est inventore numquam voluptatem hic nam blanditiis placeat illum nesciunt voluptatum eos cum quos magni voluptates ipsam. Perspiciatis alias ducimus libero. Quo provident omnis fugiat ut repellendus optio cum quaerat odio et ipsa. Molestias, atque repellat non maxime amet corporis magni libero quam numquam error beatae at asperiores et a porro nostrum ab necessitatibus esse aliquid iure repellendus obcaecati unde quo eius eum dolores quasi consectetur culpa velit optio! Sequi, dolor, minima, veniam doloribus in ullam cupiditate iste animi ipsum esse eaque similique illo temporibus magni et earum amet sint deleniti est reiciendis. Maxime, quis, animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, adipisci, explicabo pariatur illum deleniti quam iusto placeat nisi aliquam praesentium mollitia eligendi a! Sequi, voluptatibus sed quos possimu animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-project-bio -->
+
+	<div class="cd-project-bio project-4">
+		<div class="cd-project-bio-pict">
+			<img src="img/project-bio-img-3.jpg" alt="Member Bio image">
+		</div> <!-- cd-project-bio-pict -->
+
+		<div class="cd-bio-content">
+			<h1>Other</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, amet, voluptatibus et omnis dolore illo saepe voluptatem qui quibusdam sunt corporis ut iure repellendus delectus voluptate explicabo temporibus quos eaque?</p>
+			<p>Lorem ipsum dolor sit amet, coempore fugiat? Corporis, officia, assumenda, asperiores blanditiis quidem alovident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-project-bio -->
+
 	<a href="#0" class="cd-project-bio-close">Close</a> <!-- close the author bio section -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Gem jQuery -->
+<script>
+
+// Get the context of the canvas element we want to select
+var ctx = document.getElementById("modular-doughnut").getContext("2d");
+var data = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    },
+    {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+    },
+    {
+        value: 40,
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "Grey"
+    },
+    {
+        value: 120,
+        color: "#4D5360",
+        highlight: "#616774",
+        label: "Dark Grey"
+    }
+];
+
+$.fn.isOnScreen = function(){
+    var element = this.get(0);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+var options = {//String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+    tooltipTemplate : "<%if (label){%><%=label%>: <%}%><%= value %>kb"
+}
+
+var helpers = Chart.helpers;
+var haveDrawnChart = false;
+var interval = setInterval(function(){
+	if( $('#skillsContainer').isOnScreen() ){
+		clearInterval(interval)	
+		var moduleDoughnut = new Chart(ctx).Doughnut(data, { tooltipTemplate : "<%if (label){%><%=label%>: <%}%><%= value %>", animation: true });
+		// 
+		var legendHolder = document.createElement('div');
+		legendHolder.className = legendHolder.className + "animated bounceIn";
+		legendHolder.innerHTML = moduleDoughnut.generateLegend();
+		// Include a html legend template after the module doughnut itself
+		helpers.each(legendHolder.firstChild.childNodes, function(legendNode, index){
+			helpers.addEvent(legendNode, 'mouseover', function(){
+				var activeSegment = moduleDoughnut.segments[index];
+				activeSegment.save();
+				activeSegment.fillColor = activeSegment.highlightColor;
+				moduleDoughnut.showTooltip([activeSegment]);
+				activeSegment.restore();
+			});
+		});
+		helpers.addEvent(legendHolder.firstChild, 'mouseout', function(){
+			moduleDoughnut.draw();
+		});
+		document.getElementById("fixed").appendChild(legendHolder);
+
+	}
+}, 100 * 3)
+
+</script>
 </body>
 </html>
