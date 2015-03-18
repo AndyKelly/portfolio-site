@@ -12,6 +12,7 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	<script src="js/chart.js"></script>
   	<script src="js/jquer.appear.js"></script>
+  	<script src="js/salvattore.min.js"></script>
 	<title>Andrew Kelly</title>
 </head>
 <body>
@@ -29,28 +30,36 @@
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
 				<h2>Bio</h2>
-				<p>She's just a small town girl, living in a lonely world
-She took the midnight train going anywhere
-He's just a city boy, born and raised in South Detroit
-He took the midnight train going anywhere
-
-I seen her in a smoky room
-The smell of wine and cheap perfume
-For a smile they can share the night
-It goes on and on and on and on</p>
+				<p>Hi, I'm Andy, a developer based in Dublin. My interest in my craft is huge. I'm a self-driven learner, I swallow books whole, to me a day where I haven't learnt something new is a day wasted. I value quality and stability in the product(s) I produce, I'm often pragmatic but contrarily I've got a hacker mindset. I love to tweak and experiment. I place enormous pride in my ability to inovate and come at and solve a problem from a new angle.</p>
+	<p>I like to think I'm a nice guy to be around, I thrive on the people I work with and nothing makes me prouder than being able to say I helped someone get their job done easier or that maybe they've learnt something new. On the flip side, the most important thing a company can offer me is a good team, with diverse and interesting people whom I can learn from.</p>
+ 	<p>At my current role I wear many hats. From building fault tolerant, scaleable services to maintaining databases to orchestrating deployments to building elegant and fun web apps.</p>
+	.
+				<p>If you think I can be of use to you or your team then please do get in touch. Thanks for stopping by!</p>
 			</div> <!-- cd-container -->
 		</section>
 
 
 		<section class="cd-section cd-placeholder-2">
 			<div id="skillsContainer" class="cd-container">
-				<h2>Languages</h2>
+				<h2>Languages I've used in production</h2>
+				<div class="container">
+				    <div class="fixed" id="fixed">	
+				    </div>
+				    <div class="flex-item">
+						<canvas id="modular-doughnut" width="400" height="400"></canvas>
+				    </div>
+				</div>
+			</div> <!-- cd-container -->
+
+				    <div class="spacer"></div>
+			<div id="skillsContainer" class="cd-container">
+				<h2>Languages I'm learning</h2>
 				<div class="container">
 				    <div class="fixed" id="fixed">	
 				    </div>
 				    <div class="flex-item">
 				    	
-						<canvas id="modular-doughnut" width="400" height="400"></canvas>
+						<canvas id="modular-doughnut-2" width="400" height="400"></canvas>
 				    </div>
 				</div>
 			</div> <!-- cd-container -->
@@ -106,14 +115,14 @@ It goes on and on and on and on</p>
 
 
 		<section class="cd-section cd-placeholder-2">
-			<div id="skillsContainer" class="cd-container">
+			<div class="cd-container">
 				<h2>Technologies</h2>
-				<img src="http://iconion.com/posts/images/flat-icon-design.jpg">
+				<div id="technoligies-container" data-columns></div>
 			</div> <!-- cd-container -->
 		</section>
 
 
-		<section class="cd-team cd-section">
+		<section class="cd-team cd-section cd-team2">
 			<div class="cd-container">
 				<h2>Projects</h2>
 				<ul>
@@ -164,7 +173,7 @@ It goes on and on and on and on</p>
 		<section class="cd-section cd-placeholder-2">
 			<div class="cd-container">
 				<h2>Contact</h2>
-				<p>I'm currently looking for work blah andykelly@outlook.com</p>
+				<p>If you're looking for more information you can reach me at: <a href="mailto:andykelly@outlook.com">andykelly@outlook.com</a> or <a href="tel:+353891928870">+353891928870</a></p>
 			</div> <!-- cd-container -->
 		</section>
 
@@ -227,8 +236,16 @@ It goes on and on and on and on</p>
 <script src="js/main.js"></script> <!-- Gem jQuery -->
 <script>
 
+
+$.fn.isOnScreen = function(){
+    var element = this.get(0);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
 // Get the context of the canvas element we want to select
 var ctx = document.getElementById("modular-doughnut").getContext("2d");
+var ctx2 = document.getElementById("modular-doughnut-2").getContext("2d");
 var data = [
     {
         value: 300,
@@ -262,29 +279,30 @@ var data = [
     }
 ];
 
-$.fn.isOnScreen = function(){
-    var element = this.get(0);
-    var bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 0;
-}
 var options = {//String - A legend template
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
     tooltipTemplate : "<%if (label){%><%=label%>: <%}%><%= value %>kb"
 }
 
-var helpers = Chart.helpers;
-var haveDrawnChart = false;
 var interval = setInterval(function(){
 	if( $('#skillsContainer').isOnScreen() ){
 		clearInterval(interval)	
+		drawLanguagesDiagram()
+	}
+}, 100 * 3)
+
+function drawLanguagesDiagram(){
+
 		var moduleDoughnut = new Chart(ctx).Doughnut(data, { tooltipTemplate : "<%if (label){%><%=label%>: <%}%><%= value %>", animation: true });
+
+		var moduleDoughnut = new Chart(ctx2).Doughnut(data, { tooltipTemplate : "<%if (label){%><%=label%>: <%}%><%= value %>", animation: true });
 		// 
 		var legendHolder = document.createElement('div');
 		legendHolder.className = legendHolder.className + "animated bounceIn";
 		legendHolder.innerHTML = moduleDoughnut.generateLegend();
 		// Include a html legend template after the module doughnut itself
-		helpers.each(legendHolder.firstChild.childNodes, function(legendNode, index){
-			helpers.addEvent(legendNode, 'mouseover', function(){
+		Chart.helpers.each(legendHolder.firstChild.childNodes, function(legendNode, index){
+			Chart.helpers.addEvent(legendNode, 'mouseover', function(){
 				var activeSegment = moduleDoughnut.segments[index];
 				activeSegment.save();
 				activeSegment.fillColor = activeSegment.highlightColor;
@@ -292,13 +310,66 @@ var interval = setInterval(function(){
 				activeSegment.restore();
 			});
 		});
-		helpers.addEvent(legendHolder.firstChild, 'mouseout', function(){
+		Chart.helpers.addEvent(legendHolder.firstChild, 'mouseout', function(){
 			moduleDoughnut.draw();
 		});
 		document.getElementById("fixed").appendChild(legendHolder);
+}
 
-	}
+var tech = [
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/sports/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/people/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/abstract/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/people/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/sports/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/abstract/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/people/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/people/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/cats/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/sports/", alt: "Nothing to see here"},
+	{img:"http://lorempixel.com/200/200/people/", alt: "Nothing to see here"}
+]
+var grid = document.querySelector('#technoligies-container');
+
+
+var technologiesIDs = []
+
+for (var i = 0; i < tech.length; i++) {
+	var techItem = document.createElement('div');
+	techItem.className = techItem.className + "item";
+	techItem.innerHTML = '<img src="'+ tech[i].img+ '" alt="' + tech[i].alt+ '">'
+	techItem.id = 'techItem' + i.toString()
+	techItem.style.visibility = 'hidden';
+	technologiesIDs.push('#' + techItem.id )
+	document.getElementById("technoligies-container").appendChild(techItem);
+};
+
+
+var techInterval = setInterval(function(){
+	if( $('#technoligies-container').isOnScreen() ){
+		clearInterval(techInterval)
+		for (var i = 0; i < technologiesIDs.length; i++) {
+			$(technologiesIDs[i]).css('visibility', 'unhidden');
+			$(technologiesIDs[i]).addClass(decideClass(i))
+		};
+	} 
 }, 100 * 3)
+
+var classes = ['fadeInUp', 'fadeInLeft', 'fadeInDown', 'fadeInRight']
+
+function decideClass(index){
+	return 'animated ' + classes[index % classes.length]
+}
+
+function addTech(index, item){
+	setTimeout(function(){
+	}, index * 100)
+}
 
 </script>
 </body>
